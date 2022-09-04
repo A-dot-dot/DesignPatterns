@@ -11,3 +11,5 @@ Ways to implement the iterator :
 	3. Implement an Iterator interface and then make Container class implement it.
 
 TODO : Find out the best approach by looking into the Java Library.
+
+4. Singleton
