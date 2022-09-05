@@ -4,12 +4,20 @@ import java.util.Random;
 
 // Implemented with Eager Initialization
 
-public class Producer implements Runnable{
-    private static final Producer producer = new Producer();
+public class ProducerEagerSingleton implements Runnable{
+    private static final ProducerEagerSingleton producer = new ProducerEagerSingleton();
     private Thread t;
     private Random random;
-
     private int item;
+    private ProducerEagerSingleton() {
+        System.out.println("Created ProducerEagerSingleton.");
+        t = new Thread(this, "ProducerEagerSingleton-1");
+        random = new Random();
+    }
+
+    static ProducerEagerSingleton getProducer() {
+        return producer;
+    }
 
     @Override
     public void run() {
@@ -22,17 +30,6 @@ public class Producer implements Runnable{
                 throw new RuntimeException(e);
             }
         }
-    }
-
-    static Producer getProducer() {
-        return producer;
-    }
-
-
-    private Producer() {
-        System.out.println("Created producer.");
-        t = new Thread(this, "Producer-1");
-        random = new Random();
     }
 
     public int getItem() {
