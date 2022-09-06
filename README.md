@@ -25,3 +25,5 @@ PointIconFactory -> Checks if we already have a pointIcon object that can be use
 Point -> class {lat, long, PointIcon}
 PointService -> class {List<Point>}
 PointService class exposes a method getPoints to the client code.
+
+6. Composite Pattern :
