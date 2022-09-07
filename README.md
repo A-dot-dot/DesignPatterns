@@ -27,3 +27,5 @@ PointService -> class {List<Point>}
 PointService class exposes a method getPoints to the client code.
 
 6. Composite Pattern :
+
+7. Strategy Pattern. This pattern very closely resembles State Pattern.
